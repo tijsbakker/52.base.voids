@@ -8,7 +8,7 @@
         @vite('resources/assets/css/app.css')
         @livewireStyles
     </head>
-    <body class="flex flex-col min-h-screen bg-zinc-800 text-white" x-data="app">
+    <body class="flex flex-col min-h-screen bg-zinc-950 text-white" x-data="app">
         <aside 
             class="relative h-screen w-screen" 
             x-data="{

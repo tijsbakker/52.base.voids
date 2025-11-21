@@ -4,7 +4,7 @@
 `
 $CREATE_RELEASE()
 
-cd "$FORGE_RELEASE_DIRECTORY"
+cd $FORGE_RELEASE_DIRECTORY
 
 $FORGE_COMPOSER install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
