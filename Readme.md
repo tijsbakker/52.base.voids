@@ -1,7 +1,8 @@
 ## 2025 52.BASE module for voids.nu
 
-### Laravel Forge deploy script example
-`
+#### Laravel Forge deploy script example
+
+```
 $CREATE_RELEASE()
 
 cd $FORGE_RELEASE_DIRECTORY
@@ -20,5 +21,6 @@ ln -sfn $FORGE_SITE_PATH $MODULE_NAME
 
 cd $MODULE_APP_PATH
 
+$FORGE_COMPOSER dump-autoload
 $FORGE_PHP artisan optimize
-`
+```
