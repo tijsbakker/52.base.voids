@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@alpinejs/intersect": "^3.12.1",
+    "@swup/livewire-plugin": "^2.0.1",
+    "@swup/overlay-theme": "^2.0.2",
+    "@swup/parallel-plugin": "^0.4.0",
+    "@swup/preload-plugin": "^3.2.11",
+    "@tailwindcss/typography": "^0.5.17",
+    "@tailwindcss/vite": "^4.1.13",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.4",
+    "laravel-vite-plugin": "^2.0",
+    "tailwindcss": "^4.1.13",
+    "vite": "^7.0.4"
+  }
+}

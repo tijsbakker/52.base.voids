@@ -1,0 +1,25 @@
+{
+    "name": "boldcode/voids",
+    "description": "",
+    "authors": [
+        {
+            "name": "Boldcode",
+            "email": "info@boldcode.dev"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Voids\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    }
+}

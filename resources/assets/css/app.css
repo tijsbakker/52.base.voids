@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@source './../views/**/*.blade.php';
+
+
+@theme {
+    --font-display: "Helvetica Now Display", sans-serif; 
+    --font-sans: "Helvetica Now Text", sans-serif;
+    --animate-card-to-left: animateCardMoveToLeft 1500ms ease-in-out forwards;
+    --animate-card-to-left-reverse: animateCardMoveToLeftReverse 1500ms ease-in-out forwards;
+    --animate-card-to-right: animateCardMoveToRight 1500ms ease-in-out forwards;
+    --animate-card-to-right-reverse: animateCardMoveToRightReverse 1500ms ease-in-out forwards;
+    @keyframes animateCardMoveToLeft {
+        49% {
+            z-index: var(--initial-z);
+        }
+        50% {
+            scale: 1;
+            translate: var(--translate-x, 120%) 0;
+            z-index: 30;
+        }
+        100% {
+            scale: 1;
+            translate: 0 0;
+            z-index: 30;
+        }
+    }
+    @keyframes animateCardMoveToLeftReverse {
+        0% {
+            scale: 1;
+            translate: 0 0;
+            z-index: 30;
+        }
+        50% {
+            scale: 1;
+            translate: var(--translate-x, 120%) 0;
+            z-index: 30;
+        }
+        51% {
+            z-index: var(--initial-z);
+        }
+    }
+    @keyframes animateCardMoveToRight {
+        49% {
+            z-index: var(--initial-z);
+        }
+        50% {
+            scale: 1;
+            translate: var(--translate-x, 120%) 0;
+            z-index: 25;
+        }
+        100% {
+            scale: 1;
+            translate: 100% 0;
+            z-index: 25;
+        }
+    }
+    @keyframes animateCardMoveToRightReverse {
+        0% {
+            scale: 1;
+            translate: 100% 0;
+            z-index: 25;
+        }
+        50% {
+            scale: 1;
+            translate: var(--translate-x, 120%) 0;
+            z-index: 25;
+        }
+        51% {
+            z-index: var(--initial-z);
+        }
+    }
+}
+
+.transition-fade {
+    transition: opacity 0.2s cubic-bezier(0.5, 0, 0.15, 1);
+    opacity: 1;
+}
+
+html.is-changing .transition-fade {
+    opacity: 0;
+}
+  
+.transition-fade.is-next-container {
+    opacity: 1;
+}
+  
+.transition-fade.is-previous-container {
+    opacity: 0;
+}
