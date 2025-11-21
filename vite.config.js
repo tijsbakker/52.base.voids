@@ -3,24 +3,23 @@ import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import { resolve, relative, isAbsolute } from 'node:path';
 
-const toRelative = (base, target) =>
-    isAbsolute(target) ? relative(base, target) : target;
+const toRelative = (base, target) => isAbsolute(target) ? relative(base, target) : target;
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
     const cwd = process.cwd();
 
-    const publicDirectory = env.MODULE_PUBLIC_PATH
-        ? toRelative(cwd, env.MODULE_PUBLIC_PATH)
+    const publicDirectory = env.MODULE_APP_PUBLIC_PATH
+        ? toRelative(cwd, env.MODULE_APP_PUBLIC_PATH)
         : '../../public';
 
     const publicAbs = resolve(cwd, publicDirectory);
 
-    const buildDirectory = env.MODULE_BUILD_PATH
-        ? toRelative(publicAbs, env.MODULE_BUILD_PATH)
+    const buildDirectory = env.MODULE_APP_BUILD_PATH
+        ? toRelative(publicAbs, env.MODULE_APP_BUILD_PATH)
         : 'build/voids';
 
-    const rawHotFile = env.MODULE_HOT_FILE ?? '../../public/hot-voids';
+    const rawHotFile = env.MODULE_APP_HOT_FILE ?? '../../public/hot-voids';
     const hotFile = isAbsolute(rawHotFile)
         ? relative(cwd, rawHotFile)
         : rawHotFile;
